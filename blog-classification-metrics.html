@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Blog - Evaluation Metrics for Classification Models</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+    <!-- Blog Stylesheet File -->
+    <link href="css/blog.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Responsive css -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body>
+
+<!-- start section navbar -->
+<nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+        <div class="container">
+
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </div>
+
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+            <ul class="nav-menu list-unstyled">
+                <li><a href="index.html#header" class="smoothScroll">Home</a></li>
+                <li><a href="index.html#about" class="smoothScroll">About</a></li>
+                <li><a href="index.html#portfolio" class="smoothScroll">Portfolio</a></li>
+                <li><a href="index.html#journal" class="smoothScroll">Blog</a></li>
+                <li><a href="index.html#contact" class="smoothScroll">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End section navbar -->
+<!-- start section main content -->
+<div class="main-content paddsection">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                    <div class="container-main single-main">
+                        <div class="col-md-12">
+                            <div class="block-main mb-30">
+                                <img src="images/blog/classification-metrics.jpg" class="img-responsive" alt="reviews2"
+                                     style="width: 100%">
+                                <div class="content-main single-post padDiv">
+                                    <div class="journal-txt">
+                                        <h4><a href="#">EVALUATION METRICS FOR CLASSIFICATION MODELS</a></h4>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="author">by:<a href="#">Bohdan Boiprav</a></li>
+                                            <li class="date">date:<a href="#">Mar 9, 2023</a></li>
+                                        </ul>
+                                    </div>
+                                    <p class="mb-30">Evaluation metrics are used to measure the quality of the model.
+                                        One of the most important topics in machine learning is how to evaluate your
+                                        model. When you build your model, it is very crucial to measure how accurately
+                                        it predicts your expected outcome.
+                                        We have different evaluation metrics for a different set of machine learning
+                                        algorithms.
+                                    </p>
+                                    <h5>Why do we need evaluation metrics?</h5>
+                                    <p class="mb-30">
+                                        Evaluation metrics can help you assess your model’s performance, monitor your ML
+                                        system in production, and control your model to fit your business needs.<br><br>
+                                        Our goal is to create and select a model which gives high accuracy on
+                                        out-of-sample data. It’s very crucial to use multiple evaluation metrics to
+                                        evaluate your model because a model may perform well using one measurement from
+                                        one evaluation metric while may perform poorly using another measurement from
+                                        another evaluation metric.
+
+                                    <h5>Classification Accuracy</h5>
+                                    <p class="mb-30">
+                                        The simplest metric for model evaluation is Accuracy. It is the ratio of the
+                                        number of correct predictions to the total number of predictions made for a
+                                        dataset.<br><br>For example, A dataset with two target classes containing
+                                        100 samples. 98 samples belong to class A and 2 samples belong to class B in
+                                        our training data, our model would give us 98% accuracy. That’s why we need
+                                        to look at more metrics to get a better result.<br><br>
+                                        Accuracy gives us an overall picture of how much we can rely on our model’s
+                                        prediction. This metric is blind to the difference between classes and types of
+                                        errors. That’s why it is not good enough for imbalanced datasets.
+                                    </p>
+                                    <h5>Precision or Positive Predictive Value (PPV)</h5>
+                                    <p class="mb-30">
+                                        It is the ratio of True Positives to all the positives predicted by the model.
+                                        It is useful for the skewed and unbalanced dataset. The more False positives the
+                                        model predicts, the lower the precision.<br><br>
+                                        For example, we have a medical test of 20 patients and the test identifies 8 of
+                                        them have the disease. Of the 8 identified by the test, 5 actually had the
+                                        disease (true positives) while the other 3 did not (false positives). We later
+                                        find out that the test missed the 4 additional patients who turned out to have
+                                        the disease (false negatives).<br><br>
+                                        The values are TP=5, FP=3, FN=4, TN=8.<br><br>
+                                        Precision = 5/5+3 = 0.625
+                                    </p>
+                                    <h5>Recall or Sensitivity or True Positive Rate(TPR)</h5>
+                                    <p class="mb-30">
+                                        It is the ratio of true positives to all the positives in your dataset. It
+                                        measures the model’s ability to detect positive samples. The more false
+                                        negatives the model predicts, the lower the recall.
+                                        <br><br>
+                                        From the previous example of precision, the values are TP=5, FP=3, FN=4,
+                                        TN=8.<br><br>
+                                        Recall = 5/5+4 = 0.555<br><br>
+                                        The precision takes into account how both the positive and negative samples were
+                                        classified, but the recall only considers the positive samples in its
+                                        calculations. In other words, the precision is dependent on both the negative
+                                        and positive samples, but the recall is dependent only on the positive samples
+                                        (and independent of the negative samples).<br><br>
+                                        The precision considers when a sample is classified as Positive, but it does not
+                                        care about correctly classifying all positive samples. The recall cares about
+                                        correctly classifying all positive samples, but it does not care if a negative
+                                        sample is classified as positive.
+                                    </p>
+                                    <h5>F1-score or F-measure</h5>
+                                    <p class="mb-30">
+                                        It is a single metric that combines both Precision and Recall. The higher the F1
+                                        score, the better is the performance of our model. The range for F1-score is
+                                        [0,1].<br><br>
+                                        F1 score is the weighted average of precision and recall. The classifier will
+                                        only get a high F-score if both precision and recall are high. This metric only
+                                        favors classifiers that have similar precision and recall.<br><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  </div> -->
+<!-- start section main content -->
+
+<!-- start section footer -->
+<div id="footer" class="text-center">
+    <div class="container">
+        <div class="socials-media text-center">
+
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/bohdanboiprav"><i class="ion-social-github"></i></a></li>
+                <li><a href="https://www.instagram.com/bboyprav/"><i class="ion-social-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/bboyprav/"><i class="ion-social-instagram"></i></a></li>
+                <li><a href="https://wa.me/353857377222"><i class="ion-social-whatsapp"></i></a></li>
+            </ul>
+
+        </div>
+
+        <p>&copy; Bohdan Boiprav 2024</p>
+
+    </div>
+</div>
+<!-- End section footer -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/typed/typed.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/magnific-popup/magnific-popup.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

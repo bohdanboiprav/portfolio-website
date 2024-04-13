@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Blog - Deploying Machine Learning Model to Production in the Cloud</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+    <!-- Blog Stylesheet File -->
+    <link href="css/blog.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Responsive css -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body>
+
+<!-- start section navbar -->
+<nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+        <div class="container">
+
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </div>
+
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+            <ul class="nav-menu list-unstyled">
+                <li><a href="index.html#header" class="smoothScroll">Home</a></li>
+                <li><a href="index.html#about" class="smoothScroll">About</a></li>
+                <li><a href="index.html#portfolio" class="smoothScroll">Portfolio</a></li>
+                <li><a href="index.html#journal" class="smoothScroll">Blog</a></li>
+                <li><a href="index.html#contact" class="smoothScroll">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End section navbar -->
+<!-- start section main content -->
+<div class="main-content paddsection">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                    <div class="container-main single-main">
+                        <div class="col-md-12">
+                            <div class="block-main mb-30">
+                                <img src="images/blog/dploy-ml.jpg" class="img-responsive" alt="reviews2"
+                                     style="width: 100%">
+                                <div class="content-main single-post padDiv">
+                                    <div class="journal-txt">
+                                        <h4><a href="#">DEPLOYING MACHINE LEARNING MODEL TO PRODUCTION IN THE CLOUD</a>
+                                        </h4>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="author">by:<a href="#">Bohdan Boiprav</a></li>
+                                            <li class="date">date:<a href="#">Mar 10, 2023</a></li>
+                                        </ul>
+                                    </div>
+                                    <p class="mb-30">AWS, or Amazon Web Services, is a cloud computing service used in
+                                        many businesses for storage, analytics, applications, deployment services, and
+                                        many others. It’s a platform utilizes several services to support business in a
+                                        serverless way with pay-as-you-go schemes.
+                                        <br><br>
+                                        Machine learning modeling activity is also one of the activities that AWS
+                                        supports. With several services, modeling activities can be supported, such as
+                                        developing the model to making it into production. AWS has shown versatility,
+                                        which is essential for any business that needs scalability and speed.
+                                        <br><br>
+                                        This article will discuss deploying a machine learning model in the AWS cloud
+                                        into production. How could we do that? Let’s explore further.
+                                    </p>
+                                    <h5>Preparation</h5>
+                                    <p class="mb-30">
+                                        Before you start this tutorial, you need to create an AWS account, as we would
+                                        need them to access all the AWS services. I assume that the reader would use the
+                                        free tier to follow this article. Additionally, I assume the reader already
+                                        knows how to use Python programming language and has basic knowledge of machine
+                                        learning. Also, we will focus on the model deployment part and will not
+                                        concentrate on other aspects of data science activity, such as data
+                                        preprocessing and model evaluation.
+                                        <br><br>
+                                        With that in mind, we will start our journey of deploying your machine learning
+                                        model in the AWS Cloud services.
+                                    </p>
+                                    <p class="mb-30">
+                                        In this tutorial, we will develop a machine-learning model to predict churn from
+                                        the given data. The training dataset is acquired from Kaggle, which you can
+                                        download here.
+                                        <br><br>
+                                        After we have acquired the dataset, we would create an S3 bucket to store the
+                                        dataset. Search the S3 in the AWS services and make the bucket.
+                                    </p>
+                                    <p class="mb-30">
+                                        After you have finished creating the bucket and uploading the data into your
+                                        bucket, we will go to the AWS SageMaker service. In this service, we will use
+                                        the Studio as our working environment. If you have never used the Studio, let’s
+                                        create a domain and user before proceeding further.
+                                        <br><br>
+                                        First, choose the Domains within the Amazon SageMaker Admin configurations.
+                                        <br><br>
+                                        In the Domains, you would see a lot of buttons to select. In this screen, select
+                                        the Create domain button.
+                                        <br><br>
+                                        Choose the quick setup if you want to speed up the creation process. After it’s
+                                        finished, you should see a new domain created in the dashboard. Select the new
+                                        domain you just created and then click the Add user button.
+                                        <br><br>
+                                        Next, you should name the user profile according to your preferences. For the
+                                        execution role, you can leave it on default for now, as it’s the one that was
+                                        created during the Domain creation process.
+                                        <br><br>
+                                        Just click next until the canvas setting. In this section, I turn off several
+                                        settings that we don’t need, such as Time Series Forecasting.
+                                        <br><br>
+                                        After everything is set, go to the studio selection and select the Open studio
+                                        button with the user name you just created.
+                                        <br><br>
+                                        Inside the Studio, navigate to the sidebar that looks like a folder icon and
+                                        create a new notebook there. We can let them by default, like the image below.
+                                        <br><br>
+                                        With the new notebook, we would work to create a churn prediction model and
+                                        deploy the model into API inferences that we can use in production.
+                                        <br><br>
+                                        First, let’s import the necessary package and read the churn data.
+                                        <br><br>
+                                        With our dataset ready, we would now develop a churn prediction model and deploy
+                                        them. In the AWS, we often use a script training method for machine learning
+                                        training. That’s why we would develop a script before starting the training.
+                                        <br><br>
+                                        For the next step, we need to create an additional Python file, which I called
+                                        train.py, in the same folder.
+                                        <br><br>
+                                        Inside this file, we would set our model development process to create the churn
+                                        model.
+                                        <br><br>
+                                        Next, we would use the parser method to control the variable that we can input
+                                        into our training process. The overall code that we would put in our script to
+                                        train our model is in the code below.
+                                        <br><br>
+                                        Lastly, we need to put four different functions that SageMaker requires to make
+                                        inferences: model_fn, input_fn, output_fn, and predict_fn.
+                                        With our script ready, we would run the training process. In the next step, we
+                                        would pass the script we created above into the SKLearn estimator. This
+                                        estimator is a Sagemaker object that would handle the entire training process,
+                                        and we would only need to pass all the parameters similar to the code below.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  </div> -->
+<!-- start section main content -->
+
+<!-- start section footer -->
+<div id="footer" class="text-center">
+    <div class="container">
+        <div class="socials-media text-center">
+
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/bohdanboiprav"><i class="ion-social-github"></i></a></li>
+                <li><a href="https://www.instagram.com/bboyprav/"><i class="ion-social-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/bboyprav/"><i class="ion-social-instagram"></i></a></li>
+                <li><a href="https://wa.me/353857377222"><i class="ion-social-whatsapp"></i></a></li>
+            </ul>
+
+        </div>
+
+        <p>&copy; Bohdan Boiprav 2024</p>
+
+    </div>
+</div>
+<!-- End section footer -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/typed/typed.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/magnific-popup/magnific-popup.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

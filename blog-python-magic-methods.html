@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Blog - 3 Python Magic Methods Every Programmer Should Know</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+    <!-- Blog Stylesheet File -->
+    <link href="css/blog.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Responsive css -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body>
+
+<!-- start section navbar -->
+<nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+        <div class="container">
+
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </div>
+
+            <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+            <ul class="nav-menu list-unstyled">
+                <li><a href="index.html#header" class="smoothScroll">Home</a></li>
+                <li><a href="index.html#about" class="smoothScroll">About</a></li>
+                <li><a href="index.html#portfolio" class="smoothScroll">Portfolio</a></li>
+                <li><a href="index.html#journal" class="smoothScroll">Blog</a></li>
+                <li><a href="index.html#contact" class="smoothScroll">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End section navbar -->
+<!-- start section main content -->
+<div class="main-content paddsection">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                    <div class="container-main single-main">
+                        <div class="col-md-12">
+                            <div class="block-main mb-30">
+                                <img src="images/blog/python-methods.jpg" class="img-responsive" alt="reviews2"
+                                     style="width: 100%">
+                                <div class="content-main single-post padDiv">
+                                    <div class="journal-txt">
+                                        <h4><a href="#">3 PYTHON MAGIC METHODS EVERY PROGRAMMER SHOULD KNOW</a></h4>
+                                    </div>
+                                    <div class="post-meta">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="author">by:<a href="#">Bohdan Boiprav</a></li>
+                                            <li class="date">date:<a href="#">Feb 12, 2023</a></li>
+                                        </ul>
+                                    </div>
+                                    <p class="mb-30">In Python, magic methods help you emulate the behavior of built-in
+                                        functions in your Python classes. These methods have leading and trailing double
+                                        underscores (__), and hence are also called dunder methods.
+                                        <br><br>
+                                        These magic methods also help you implement operator overloading in Python.
+                                        You’ve probably seen examples of this. Like using the multiplication operator *
+                                        with two integers gives the product.
+                                    </p>
+                                    <h5>__init__ Method</h5>
+                                    <p class="mb-30">
+                                        Consider the following Vector2D class:
+                                    </p>
+                                    <code class="mb-30">
+                                        class Vector2D:<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;pass
+                                    </code>
+                                    <p class="mb-30">
+                                        Once you create a class and instantiate an object, you can add attributes like
+                                        so:
+                                    </p>
+                                    <code class="mb-30">
+                                        obj_name.attribute_name = value
+                                    </code>
+                                    <p class="mb-30">
+                                        However, instead of manually adding attributes to every instance that you create
+                                        (not interesting at all, of course!), you need a way to initialize these
+                                        attributes when you instantiate an object.
+                                        <br><br>
+                                        To do so you can define the __init__ method. Let's define the define the
+                                        __init__ method for our Vector2D class:
+                                    </p>
+                                    <code class="mb-30">
+                                        class Vector2D:<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, x, y):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = x<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = y<br>
+                                        <br>
+                                        v = Vector2D(1, 2)
+                                    </code>
+                                    <p class="mb-30">
+                                    </p>
+                                    <h5>__str__ Method</h5>
+                                    <p class="mb-30">
+                                        The __str__ is also used to add a string representation of the object. In
+                                        general, the __str__ method is used to provide info to the end users of the
+                                        class.
+                                        <br><br>
+                                        Let's add a __str__ method to our class:
+                                    </p>
+                                    <code>
+                                        class Vector2D:<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, x, y):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = x<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = y<br>
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;def __str__(self):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f'Vector2D(x={self.x},
+                                        y={self.y})'<br>
+                                        <br>
+                                        v = Vector2D(3, 5)<br>
+                                        print(v)
+                                    </code>
+                                    <p class="mb-30"></p>
+                                    <h5>__repr__ Method</h5>
+                                    <p class="mb-30">
+                                        The __repr__ method is used to provide a string representation of the object.
+                                        This is used for debugging and development. The __repr__ method is called when
+                                        you use the repr() function on the object.
+                                        <br><br>
+                                        Let's add a __repr__ method to our class:
+                                    </p>
+                                    <code class="mb-30">
+                                        class Vector2D:<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, x, y):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = x<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.y = y<br>
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;def __str__(self):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f'Vector2D(x={self.x},
+                                        y={self.y})'<br>
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;def __repr__(self):<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f'Vector2D(x={self.x},
+                                        y={self.y})'<br>
+                                        <br>
+                                        v = Vector2D(3, 5)<br>
+                                        print(repr(v))
+                                    </code>
+                                    <p class="mb-30">Output:</p>
+                                    <code class="mb-30">
+                                        Vector2D(x=3, y=5)
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  </div> -->
+<!-- start section main content -->
+
+<!-- start section footer -->
+<div id="footer" class="text-center">
+    <div class="container">
+        <div class="socials-media text-center">
+
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/bohdanboiprav"><i class="ion-social-github"></i></a></li>
+                <li><a href="https://www.instagram.com/bboyprav/"><i class="ion-social-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/bboyprav/"><i class="ion-social-instagram"></i></a></li>
+                <li><a href="https://wa.me/353857377222"><i class="ion-social-whatsapp"></i></a></li>
+            </ul>
+
+        </div>
+
+        <p>&copy; Bohdan Boiprav 2024</p>
+
+    </div>
+</div>
+<!-- End section footer -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/typed/typed.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/magnific-popup/magnific-popup.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
